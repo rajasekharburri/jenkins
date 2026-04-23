@@ -17,16 +17,14 @@ pipeline {
         stage('Test') {
               script {
                     sh """
-                           echo "test"
+                           echo "building"
                     """
                 }
         }
         stage('Deploy') {
-          script {
-                    sh """
-                           echo "deploy"
-                    """
-                }
+            steps {
+                echo "Deploying"
+            }
         }
     }
     post{
