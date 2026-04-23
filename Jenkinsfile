@@ -9,17 +9,20 @@ pipeline {
             steps {
                 script {
                     sh """
-                           echo "building"
+                           echo "Building"
                     """
                 }
             }
         }
         stage('Test') {
-              script {
+           stage('Build') {
+            steps {
+                script {
                     sh """
-                           echo "building"
+                           echo "Building"
                     """
                 }
+            }
         }
         stage('Deploy') {
             steps {
