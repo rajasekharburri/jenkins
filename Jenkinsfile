@@ -4,34 +4,37 @@ pipeline {
             label 'AGENT-1'
         }
     }
+
     stages {
         stage('Build') {
             steps {
                 script {
                     sh """
-                           echo "Building"
+                        echo "Building"
                     """
                 }
             }
         }
+
         stage('Test') {
-           stage('Build') {
             steps {
                 script {
                     sh """
-                           echo "Building"
+                        echo "Testing"
                     """
                 }
             }
         }
+
         stage('Deploy') {
             steps {
                 echo "Deploying"
             }
         }
     }
-    post{
-        always{
+
+    post {
+        always {
             echo 'I will always say Hello again!'
             cleanWs()
         }
